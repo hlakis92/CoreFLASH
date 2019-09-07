@@ -1,0 +1,28 @@
+[
+{
+    "id": 1,
+    "name": "Fluoroscopy (Including upper GI and barium enema)",
+    "href": "Fluoroscopy"
+},
+{
+    "id": 2,
+    "name": "Mammography",
+    "href": "Mammography"
+},
+{
+    "id": 3,
+    "name": "Neuroradiology (Skull Base Foramina)",
+    "href": "Neuroradiology"
+    
+},
+{
+    "id": 4,
+    "name": "Physics",
+    "href": "Physics"
+},
+{
+    "id": 5,
+    "name": "Tomography (Computed)",
+    "href": "Tomography"
+}
+]

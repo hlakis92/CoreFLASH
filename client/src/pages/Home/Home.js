@@ -113,7 +113,7 @@ class Home extends Component {
 
             <Col size="md-2">
                 <Card
-                name="Computed tomography"
+                name="Computed Tomography"
                 description="computerized axial tomography (CAT) scan, including CT angiography"
                 image="https://images.pexels.com/photos/721166/pexels-photo-721166.jpeg?cs=srgb&dl=backbone-blur-check-721166.jpg&fm=jpg"
               />

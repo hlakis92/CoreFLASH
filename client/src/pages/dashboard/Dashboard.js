@@ -9,9 +9,13 @@ import Title from "../../components/Title";
 import getUser from "../../utils/api";
 import API from "../../utils/pitchApi";
 import PitchContainer from "../../components/PitchContainer"
+import { Link } from "../../../node_modules/react-router-dom";
+import categories from "../../../src/categories.json";
+import SubNav from "../../components/subNav";
+
 
 class Dashboard extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -24,16 +28,16 @@ class Dashboard extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log(this.props);
-    getUser().then ( response => {
-        console.log(response.data);
-        if(response.data.user) {
-          this.setState({
-            username: response.data.user.username
-          });
-        }
-    
+    getUser().then(response => {
+      console.log(response.data);
+      if (response.data.user) {
+        this.setState({
+          username: response.data.user.username
+        });
+      }
+
     }
 
     )
@@ -41,71 +45,95 @@ class Dashboard extends Component {
 
   handleChange = (event) => {
     this.setState({
-        title: event.target.value,
-        // description: event.target.value
-    }); 
-}
-
-handleChange2 = (event) => {
-    this.setState({ 
-        // title: event.target.value,
-        description: event.target.value
+      title: event.target.value,
+      // description: event.target.value
     });
-}
+  }
 
-handleSubmit = (event) => {
+  handleChange2 = (event) => {
+    this.setState({
+      // title: event.target.value,
+      description: event.target.value
+    });
+  }
+
+  handleSubmit = (event) => {
     // alert('A name was submitted: ' + this.state.title);
     event.preventDefault();
     this.setState({
-        title: event.target.value,
-        description: event.target.value,
-        titlesAndDescriptions: [...this.state.titlesAndDescriptions].concat({title: this.state.title, description: this.state.description, upVote: 0, downVote: 0})
+      title: event.target.value,
+      description: event.target.value,
+      titlesAndDescriptions: [...this.state.titlesAndDescriptions].concat({ title: this.state.title, description: this.state.description, upVote: 0, downVote: 0 })
     })
     const userInput = {
       title: this.state.title,
-      description:this.state.description,
-      username:this.state.username
+      description: this.state.description,
+      username: this.state.username
     };
     console.log(userInput)
     API.savePitch(userInput);
-}
+  }
 
-// //this is the code that needs to be finished 
-// handleUpVote = (event) => {
-//   console.log(event.target);
-//   const arrayIndex = parseInt(event.target.getAttribute("data-index"))
-//   const newtitlesAndDescriptions = this.state.titlesAndDescriptions
-//   newtitlesAndDescriptions[arrayIndex] = this.state.titlesAndDescriptions
-//   this.setState({
+  // //this is the code that needs to be finished 
+  // handleUpVote = (event) => {
+  //   console.log(event.target);
+  //   const arrayIndex = parseInt(event.target.getAttribute("data-index"))
+  //   const newtitlesAndDescriptions = this.state.titlesAndDescriptions
+  //   newtitlesAndDescriptions[arrayIndex] = this.state.titlesAndDescriptions
+  //   this.setState({
 
-//   })
+  //   })
 
-// }
+  // }
 
-pitchContainer = (props) => {
+  pitchContainer = (props) => {
     let titleLength = Object.keys(this.state.title).value;
     let descriptionLength = Object.keys(this.state.description).value;
-}
+  }
 
 
   render() {
     return (
-        <Container fluid>
+      <Container fluid>
         <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>
                 <strong>
-                  <i className="fa fa-user" /> Welcome <h1 style={{fontWeight:"bolder", fontSize: "64px", color:"blue"}}>{this.state.username}</h1>
+                  <i className="fa fa-user" /> Welcome <h1 style={{ fontWeight: "bolder", fontSize: "64px", color: "blue" }}>{this.state.username}</h1>
                 </strong>
               </h1>
             </Jumbotron>
-          </Col>    
+          </Col>
         </Row>
-       
+        <Row>
+          <Col size="md-6">
+            <div className="categories" style={{ fontWeight: "bolder", fontSize: "30px", color: "black" }}>
+              {categories.map(category => (
+                <SubNav
+                  id={category.id}
+                  key={category.id}
+                  href={category.href}
+                  name={category.name}
+                />
+              ))}
+            </div>
+          </Col>
+          <Col size="md-6">
+
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-6">
+
+          </Col>
+          <Col size="md-6">
+
+          </Col>
+        </Row>
         <br></br><br></br><br></br>
       </Container>
-      
+
     );
   }
 }

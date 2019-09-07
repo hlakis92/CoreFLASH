@@ -81,6 +81,7 @@ class App extends Component {
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/dashboard/:categoryName" component={Dashboard} />
       </Switch>
     </div>
   </Router>
