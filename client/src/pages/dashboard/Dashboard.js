@@ -108,7 +108,7 @@ class Dashboard extends Component {
         </Row>
         <Row>
           <Col size="md-6">
-            <div className="categories" style={{ fontWeight: "bolder", fontSize: "30px", color: "black" }}>
+            <div className="categories" style={{ fontWeight: "bolder", fontSize: "20px", color: "black" }}>
               {categories.map(category => (
                 <SubNav
                   id={category.id}

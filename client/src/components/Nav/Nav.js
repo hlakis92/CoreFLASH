@@ -4,26 +4,26 @@ import "./Nav.css";
 
 
 const Nav = () =>
-  <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <nav className="navbar navbar-expand-lg">
     <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="/" style={{color:"white"}}>
           CoreFLASH
         </a>
       <div>
         <span className="nav-Links">
-          <a href="/" className="navbar-brand">
+          <a href="/" className="navbar-brand" style={{color:"white"}}>
             Home
           </a>
-          <a href="/" className="navbar-brand">
+          <a href="/" className="navbar-brand" style={{color:"white"}}>
             About
           </a>
-          <a href="/" className="navbar-brand">
+          <a href="/" className="navbar-brand" style={{color:"white"}}>
             Projects
           </a>
-          <a href="/login" className="navbar-brand">
+          <a href="/login" className="navbar-brand" style={{color:"white"}}>
             Login
           </a>
-          <a href="/signup" className="navbar-brand">
+          <a href="/signup" className="navbar-brand" style={{color:"white"}}>
             Signup
           </a>
         </span>

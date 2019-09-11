@@ -73,8 +73,8 @@ class Home extends Component {
         <br></br>
         <br></br>
         <Row>
-            <Col size="md-12"><div style={{margin:"10%;",backgroundImage:studyCoffree}}>
-              <img src={studyCoffree} /> 
+            <Col size="md-12"><div style={{margin:"5%;",backgroundImage:studyCoffree}}>
+            {/* <img src={studyCoffree} />  */}
               
               </div>
             </Col>

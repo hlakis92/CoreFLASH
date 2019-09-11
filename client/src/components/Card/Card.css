@@ -38,6 +38,9 @@
   margin-top: 18px;
 }
 
-.card > #projectTitle {
+.card > .content > #projectTitle {
   list-style-type: none;
+  text-align: center;
+  word-wrap: break-word;
+  font-weight: bold;
 }
