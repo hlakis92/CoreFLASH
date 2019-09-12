@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import "./SignUp.css";
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import { Col, Row, Container } from "../../components/Grid";
+import Jumbotron from '../../components/Jumbotron';
+import { cpus } from 'os';
 
 class SignUp extends Component {
 	constructor() {
@@ -50,75 +53,95 @@ class SignUp extends Component {
 								})
 							} else {
 								alert('Sign-up error')
-									console.log('Sign-up error');
-									
-								}
+								console.log('Sign-up error');
+
+							}
 						}).catch(error => {
 							alert('Sign up error')
 							console.log('Sign up server error: ')
 							console.log(error);
 						})
-					
+
 				} else {
 					alert('Sign-up error')
-						console.log('Sign-up error');
-						
-					}
+					console.log('Sign-up error');
+
+				}
 			}).catch(error => {
 				console.log('Sign up error: ')
 				console.log(error);
 			})
 	}
 	render() {
-if(this.state.shouldRedirectHome) {
-	return <Redirect to= "/dashboard"/>;
-}
+		if (this.state.shouldRedirectHome) {
+			return <Redirect to="/dashboard" />;
+		}
 		return (
-			<div className="SignupForm">
+			<Container className="formSection">
 
-				<form className="form-horizontal">
-					<div className="form-group">
-						<div className="col-1 col-ml-auto">
-							<label className="form-label" htmlFor="username">Username</label>
-						</div>
-						<div className="col-3 col-mr-auto">
-							<input className="form-input"
-								type="text"
-								id="input-example-1"
-								placeholder="Name"
-								name="username"
-								value={this.state.username}
-								onChange={this.handleChange}
-							/>
-							{console.log(this.state)}
-						</div>
-					</div>
-					<div className="form-group">
-						<div className="col-1 col-ml-auto">
-							<label className="form-label" htmlFor="password">Password: </label>
-						</div>
-						<div className="col-3 col-mr-auto">
-							<input className="form-input"
-								placeholder="Password"
-								type="password"
-								name="password"
-								value={this.state.password}
-								onChange={this.handleChange}
-							/>
-						</div>
+				<Row>
+					<Col size="md-12" className="topRow"></Col>
+				</Row>
 
-					</div>
+				<Row>
+					<Col size="md-4"></Col>
+					<Col size="md-4" >
+						<br></br><br></br>
+						<Jumbotron>
+							<Row>
+							<Col size="md-12" >
+							<div className="SignupForm">
+								<form className="form-horizontal">
+									
+									<div className="form-group">
+										<div className="">
+											<label className="form-label" htmlFor="username">Username:</label>
+										</div>
+										<div className="">
+											<input className="form-input"
+												type="text"
+												id="input-example-1"
+												placeholder="Name"
+												name="username"
+												value={this.state.username}
+												onChange={this.handleChange}
+											/>
+											{console.log(this.state)}
+										</div>
+									</div>
+									
+									<div className="form-group">
+										<div className="">
+											<label className="form-label" htmlFor="password">Password: </label>
+										</div>
+										<div className="">
+											<input className="form-input"
+												placeholder="Password"
+												type="password"
+												name="password"
+												value={this.state.password}
+												onChange={this.handleChange}
+											/>
+										</div>
+									</div>
+									
+									<div className="form-group ">
+										<div className=""></div>
+										<button className="btn btn-primary" onClick={this.handleSubmit}>Sign up</button>
+									</div>
+								</form>
+							</div>
+							</Col>
+							</Row>
+						</Jumbotron>
+					</Col>
+				</Row>
 
-					<div className="form-group ">
-						<div className="col-7"></div>
-						
-							<button className="btn btn-primary col-1 col-mr-auto" onClick={this.handleSubmit}>Sign up</button>
-						
+				<Row>
+					<Col size="md-12" className="topRow"></Col>
+				</Row>
 
-					</div>
-				</form>
-			</div>
-
+			</Container>
 		)
 	}
 }

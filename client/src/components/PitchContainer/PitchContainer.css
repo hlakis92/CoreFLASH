@@ -23,9 +23,7 @@
     border-color: white;
     border-width: 0px 0px 2px 0px;
   }
-  ::placeholder{
-    font-size: 100px;
-  }
+  
   
   .form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
   .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */

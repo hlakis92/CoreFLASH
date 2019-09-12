@@ -7,6 +7,13 @@ a {
     color: black;
 }
 
+.navbar-brand {
+    color: White;
+}
+.navbar-brand:hover {
+    color: yellow;
+}
+
 a:hover {
     color: yellow;
 }

@@ -1,0 +1,9 @@
+.jumbotron {
+    margin: auto; 
+    border: solid rgb(150, 150, 150) ;
+    background-color: whitesmoke;
+}
+
+label {
+    float: left;
+}
