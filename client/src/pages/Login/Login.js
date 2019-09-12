@@ -3,6 +3,7 @@ import "./Login.css";
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { Col, Row, Container } from "../../components/Grid";
+import Jumbotron from '../../components/Jumbotron';
 
 class Login extends Component {
 	constructor() {
@@ -50,20 +51,31 @@ class Login extends Component {
 				console.log('Login server error: ')
 				console.log(error);
 			})
-	}
+	} 
 	render() {
 		if(this.state.shouldRedirectDashboard) {
 			return <Redirect to= "/dashboard"/>;
 		}
 		return (
+			<Container>
+				<Row>
+					<Col size="md-12" className="topRow"></Col>
+				</Row>
+				<Row>
+					<Col size="md-4"></Col>
+					<Col size="md-4" >
+						<br></br><br></br>
+						<Jumbotron>
+							<Row>
+							<Col size="md-12" >
 			<div className="LoginForm">
 
 				<form className="form-horizontal">
 					<div className="form-group">
-						<div className="col-1 col-ml-auto">
+						<div className="">
 							<label className="form-label" htmlFor="username">Username</label>
 						</div>
-						<div className="col-3 col-mr-auto">
+						<div className="">
 							<input className="form-input"
 								type="text"
 								id="input-example-1"
@@ -75,10 +87,10 @@ class Login extends Component {
 						</div>
 					</div>
 					<div className="form-group">
-						<div className="col-1 col-ml-auto">
+						<div className="">
 							<label className="form-label" htmlFor="password">Password: </label>
 						</div>
-						<div className="col-3 col-mr-auto">
+						<div className="">
 							<input className="form-input"
 								placeholder="Password"
 								type="password"
@@ -91,15 +103,24 @@ class Login extends Component {
 					</div>
 
 					<div className="form-group ">
-						<div className="col-7"></div>
+						<div className=""></div>
 						
-							<button className="btn btn-success col-1 col-mr-auto" onClick={this.handleSubmit}>Login</button>
+							<button className="btn btn-success " onClick={this.handleSubmit}>Login</button>
 						
 
 					</div>
 				</form>
 			</div>
+			</Col>
+							</Row>
+						</Jumbotron>
+					</Col>
+				</Row> 
 
+				<Row>
+					<Col size="md-12" className="topRow"></Col>
+				</Row>
+			</Container>
 		)
 	}
 }

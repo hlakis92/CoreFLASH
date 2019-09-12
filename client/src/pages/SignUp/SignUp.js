@@ -137,7 +137,7 @@ class SignUp extends Component {
 							</Row>
 						</Jumbotron>
 					</Col>
-				</Row>
+				</Row> 
 
 				<Row>
 					<Col size="md-12" className="topRow"></Col>
