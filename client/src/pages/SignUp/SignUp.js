@@ -129,7 +129,9 @@ class SignUp extends Component {
 										<div className=""></div>
 										<button className="btn btn-primary" onClick={this.handleSubmit}>Sign up</button>
 									</div>
+									
 								</form>
+								
 							</div>
 							</Col>
 							</Row>

@@ -1,5 +1,6 @@
 .jumbotron {
-    margin: auto; 
+    margin-top: 30%;
+    
     border: solid rgb(150, 150, 150) ;
     background-color: whitesmoke;
 }
